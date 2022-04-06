@@ -10,11 +10,11 @@ import javax.persistence.Table;
 import java.util.Date;
 
 
-@Entity
-@Table(name = "todo_item")
+@Entity // ovo kaže Springu da je to entitet/tablica u bazi
+@Table(name = "todo_item") // ime tablice
 public class TodoItem {
-    @Id
-    @GeneratedValue
+    @Id // id je primarni ključ
+    @GeneratedValue // ovo je isto kao autoincrement u bazi
     private int id;
 
     private String text;
