@@ -3,10 +3,7 @@ package bootcamp.todoapp.ToDoApp.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 
@@ -18,7 +15,13 @@ public class TodoItem {
     private int id;
 
     private String text;
+
+    @Column(name = "created_timestamp")
     private Date createdTS;
+
+    @ManyToOne
+    @JoinColumn(name = "appuser_id")
+    private AppUser appUser;
 
     public TodoItem() {
     }
