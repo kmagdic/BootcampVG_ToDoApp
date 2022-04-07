@@ -9,6 +9,6 @@ import java.util.List;
 public interface TodoRespositry extends CrudRepository<TodoItem, Integer> {
     // metoda findAll - iz te metode Spring automatski kreirati
     List<TodoItem> findAll();
-
+    List<TodoItem> findAllByAppUserId(int id);
 
 }

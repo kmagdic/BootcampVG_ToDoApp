@@ -25,7 +25,10 @@
         <td th:text="${user.firstName}">Darko</td>
         <td th:text="${user.lastName}">Špoljarić</td>
         <td th:text="${user.birthDate}">9.9.1973</td>
-        <td><a th:href="@{delete(id=${user.id})}">delete</a></td>
+        <td>
+            <a th:href="@{/listTodosForUser(userId=${user.id})}">prikaži todove</a> |
+            <a th:href="@{delete(id=${user.id})}">delete</a>
+        </td>
     </tr>
 </table>
 

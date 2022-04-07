@@ -13,6 +13,7 @@ import java.util.Map;
 @Controller
 public class TodoDBController {
 
+    // autowired omogućava za
     @Autowired
     TodoRespositry repository;
 
@@ -40,4 +41,13 @@ public class TodoDBController {
 
         return "redirect:/list";
     }
+
+    @GetMapping("/listTodosForUser")
+    public String listTodosForUser(int userId, Model model) {
+        System.out.println("List all todo id ... " + userId);
+        model.addAttribute("todos", repository.findAllByAppUserId(userId));
+
+        return "todo";
+    }
+
 }
