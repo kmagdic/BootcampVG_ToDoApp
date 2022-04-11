@@ -37,6 +37,12 @@ public class TodoItem {
         this.createdTS = new Date();
     }
 
+    public TodoItem(String text, AppUser user) {
+        this.text = text;
+        this.createdTS = new Date();
+        this.appUser = user;
+    }
+
     public int getId() {
         return id;
     }

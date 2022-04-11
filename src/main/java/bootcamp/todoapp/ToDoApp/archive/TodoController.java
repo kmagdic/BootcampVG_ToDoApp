@@ -1,4 +1,4 @@
-package bootcamp.todoapp.ToDoApp;
+package bootcamp.todoapp.ToDoApp.archive;
 
 import bootcamp.todoapp.ToDoApp.model.TodoItem;
 import org.springframework.stereotype.Controller;

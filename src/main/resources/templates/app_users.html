@@ -24,24 +24,32 @@
     <tr th:each="user : ${users}">
         <td th:text="${user.firstName}">Darko</td>
         <td th:text="${user.lastName}">Špoljarić</td>
-        <td th:text="${user.birthDate}">9.9.1973</td>
+        <td th:text="${#dates.format(user.birthDate, 'dd.MM.yyyy')}">9.9.1973</td>
         <td>
             <a th:href="@{/listTodosForUser(userId=${user.id})}">prikaži todove</a> |
-            <a th:href="@{delete(id=${user.id})}">delete</a>
+            <a th:href="@{edit(userId=${user.id})}">uredi</a> |
+            <a th:href="@{delete(id=${user.id})}">izbriši</a>
         </td>
     </tr>
 </table>
 
 <br/>
-<form th:action="@{add}" class="col-9">
+<form th:action="@{save}" class="col-9">
+    <input th:field="${user.id}" hidden="true">
     <label>Ime</label>
     <input th:field="${user.firstName}" class="form-control">
     <label>Prezime</label>
     <input th:field="${user.lastName}" class="form-control">
     <label>Datum rođenja</label>
     <input th:field="${user.birthDate}" class="form-control" type="date">
+    <label>E-mail</label>
+    <input th:field="${user.email}" class="form-control">
+    <label>Password</label>
+    <input th:field="${user.password}" class="form-control" readonly="true">
+
+
     <br/>
-    <button type="submit">Add new</button>
+    <button type="submit">Snimi</button>
 </form>
 
 </body>
