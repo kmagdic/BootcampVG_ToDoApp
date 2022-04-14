@@ -23,6 +23,7 @@ public class TodoRepositoryIntegrationTest {
     @Test
     public void testFindByText() {
         log.info("Test Find by test executing.");
+
         // given
         Date startTest = new Date();
         TodoItem item = new TodoItem("Novi todo 123");
@@ -33,6 +34,6 @@ public class TodoRepositoryIntegrationTest {
         TodoItem found = repository.findByText("Novi todo 123");
 
         // then
-        Assert.assertEquals(found.getCreatedTS().getTime(), startTest.getTime()+1);
+        Assert.assertEquals(found.getCreatedTS().getTime(), startTest.getTime());
     }
 }
