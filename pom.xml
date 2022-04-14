@@ -16,7 +16,7 @@
 	<name>ToDoApp</name>
 	<description>ToDo Application for doing stuff</description>
 	<properties>
-		<java.version>17</java.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
